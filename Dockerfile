@@ -1,9 +1,9 @@
-FROM node
-
+FROM node:18
 WORKDIR /kube-jenk
+
+COPY package*.json ./
+RUN npm install
 
 COPY . .
 
-EXPOSE 3000
-
-CMD ["npm","start"]
+CMD ["npm", "start"]
